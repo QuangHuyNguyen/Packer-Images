@@ -6,22 +6,22 @@
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-      "script": "scripts/ansible.sh"
-    },
-    {
-      "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-      "script": "scripts/terraform.sh"
-    },
-    {
-      "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "script": "scripts/setup.sh"
     },
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "script": "scripts/install.sh"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "script": "scripts/ansible.sh"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "script": "scripts/terraform.sh"
     },
     {
       "type": "shell",
@@ -38,7 +38,7 @@
         "<enter><wait>",
         "/install/vmlinuz",
         " auto=true",
-        " url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
+        " url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/server.cfg",
         " locale=en_US<wait>",
         " console-setup/ask_detect=false<wait>",
         " console-setup/layoutcode=us<wait>",
@@ -94,7 +94,7 @@
   "post-processors": [
     [
       {
-        "output": "builds/{{.Provider}}-ubuntu2004.box",
+        "output": "builds/{{.Provider}}-ubuntu2004-server.box",
         "type": "vagrant"
       }
     ]

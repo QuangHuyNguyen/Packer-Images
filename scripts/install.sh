@@ -9,9 +9,6 @@ apt-get install awscli -y
 # Installing graphviz
 apt-get install graphviz -y
 
-# Installing git
-apt-get install git -y
-
 # Install Xclip
 apt-get install xclip -y
 
@@ -22,10 +19,5 @@ apt-get install openjdk-8-jdk -y
 apt-get install maven -y
 
 # Install Docker
-apt-get install docker.io
+apt-get install docker.io -y
 usermod -aG docker $USER
-
-# Install GUI
-apt update -y && apt install -y tasksel
-tasksel install -y ubuntu-desktop-minimal
-systemctl set-default graphical.target
